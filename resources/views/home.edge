@@ -1,0 +1,290 @@
+@layout('site_template/home_template') 
+@section('content')
+<!-- HOME -->
+<section class="home bg-image home-small" id="home">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="home-wrapper home-intro row vertical-content">
+                    <div class="col-md-6">
+                        <h1>Digital Notes Exchange</h1>
+                        <h4 class="normal-font-w">Trade ERC-20 Tokens Yoshiee is the world’s first exchange that allows you to trade ERC-20 tokens
+                            built on the Ethereum blockchain. The Yoshiee platform allows you to trade tokens with other
+                            major cryptocurrencies & fiat currencies in the market. Features such as profile creation, Chat
+                            room, live news feed & the ability to follow/communicate with fellow traders makes understanding
+                            the revolution just a little much better. Register to take advantage of this revolutionary platform.
+                            What are erc-20 tokens? Check out this video for more information. </h4>
+
+                        <a href="https://www.youtube.com/watch?v=cqZhNzZoMh8" class="btn btn-secondary popup-video">
+                            <i class="glyphicon glyphicon-play"></i> What are ERC-20 Tokens?</a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-10 m-t-20">
+                        <div class="tabbable-panel">
+                            <div class="tabbable-line">
+                                <ul class="nav nav-tabs border-bottom-none">
+                                    <li class="active btn btn-primary text-white">
+                                        <a class="normal-font-w border-none" href="#tab_default_1" data-toggle="tab">
+                                            <i class="fa fa-user"></i>
+                                            Register </a>
+                                    </li>
+                                    <li class="btn btn-secondary text-white">
+                                        <a class="normal-font-w border-none" href="#tab_default_2" data-toggle="tab">
+                                            <i class="fa fa-key"></i>
+                                            Sign In </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content tab-content-BuySell m-t-9">
+                                    <div class="tab-pane active" id="tab_default_1">
+                                        <form class="intro-form" @submit.prevent="register()" id="invite">
+                                            <h5>
+                                                <i class="fa fa-user"></i> Register
+                                                <span>Don't have an account? Register to start trading</span>
+                                            </h5>
+                                            <div class="alert" :class="[reg_alert_class]" v-if="reg_show_alert">
+                                                @{{ reg_alert_msg }}
+                                            </div>
+                                            <input :disabled="reg_is_submitting" v-model="user_reg.fullname" class="fname" placeholder="Full Name" type="text" required="required">
+                                            <input :disabled="reg_is_submitting" v-model="user_reg.email" type="email" placeholder="Email Address" required="required">
+                                            <input :disabled="reg_is_submitting" v-model="user_reg.password" type="password" placeholder="Password" class="form-control"
+                                                required="required">
+                                            <input :disabled="reg_is_submitting" v-model="user_reg.re_password" type="password" placeholder="Repeat Password" class="form-control"
+                                                required="required">
+                                            <input :disabled="reg_is_submitting" v-model="user_reg.referral_code" type="text" placeholder="Referral Code ( Optional )"
+                                                class="form-control">
+                                            <button type="submit" class="btn btn-secondary btn-block">Register</button>
+
+                                            <p>By Signing up you agree to our
+                                                <a href="/terms">terms of conditions</a>
+                                            </p>
+                                        </form>
+                                    </div>
+
+
+                                    <div class="tab-pane" id="tab_default_2">
+                                        <form class="intro-form" @submit.prevent="login()" id="invite-2">
+                                            <h5>
+                                                <i class="fa fa-key"></i> Sign in
+                                                <span>Have an account? Sign in & start trading</span>
+                                            </h5>
+                                            <div class="alert" :class="[login_alert_class]" v-if="login_show_alert">
+                                                @{{ login_alert_msg }}
+                                            </div>
+
+                                            <input type="email" :disabled="login_is_submitting" v-model="user_login.username" placeholder="Email Address" required="required">
+                                            <input type="password" :disabled="login_is_submitting" v-model="user_login.password" placeholder="Password" required="required">
+                                            <button type="submit" class="btn btn-secondary btn-block">Sign In</button>
+
+                                            <p>By Signing in you agree to our
+                                                <a href="/terms">terms of conditions</a>
+                                            </p>
+                                            <p>
+                                                <a href="/forgotpassword">Forgot Password ?</a>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- END HOME -->
+
+<!-- SERVICES -->
+<section class="section bg-lightgray" id="About">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="title-box text-center">
+
+                    <p>
+                        <span class="fa fa-bar-chart color-blue"></span> We are here to stay!</p>
+                    <h2 class="text-uppercase text-blue text-blue">Trade Confidently</h2>
+                </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <hr class="light">
+                <p class="text-faded">
+                    We provide individuals and businesses an atmosphere like no other. World class experience to buy and sell market leading
+                    cryptocurrencies and digital notes. If you are a beginner in this field or an expert, it was created
+                    for you!
+                </p>
+                <div class="row">
+                    <a href="/register" class="btn btn-primary">Get Started Now
+                        <i class="fa fa-sign-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+
+    </div>
+    <!-- end container -->
+</section>
+<!-- end SERVICES -->
+
+<!-- FEATURES -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <i class="fa fa-money fa-3x color-blue"></i>
+                <h4 class="title">Fee</h4>
+                <p>1% maker fee and 1% taker fee makes us one of the most competitive exchanges on the market</p>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <i class="fa fa-lock fa-3x color-blue"></i>
+                <h4 class="title">Security</h4>
+                <p>The vast majority of digital assets are stored securely in offline storages</p>
+            </div>
+
+
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <i class="fa fa-users fa-3x color-blue"></i>
+                <h4 class="title">Experienced Team</h4>
+                <p>Our experienced team helps us build the best product and deliver first class service to our clients</p>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <i class="fa fa-support fa-3x color-blue"></i>
+                <h4 class="title">24/7 Support</h4>
+                <p>Our multilingual 24/7 support allows us to keep in touch with customers in all time zones and regions</p>
+            </div>
+
+
+        </div>
+        <!-- end row -->
+
+    </div>
+    <!-- end container -->
+</section>
+<!-- end FEATURES -->
+
+
+<!-- Currencies -->
+<section class="section bg-lightgray" id="Currencies">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <div class="title-box text-center">
+                    <p>
+                        <span class="fa fa-money color-blue"></span> Avaible Currencies to Trade</p>
+                    <h2 class="text-uppercase text-blue text-blue">Availble Currencies</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            
+
+            
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                        <img class="w-80" src="images/logos/xrp.png" alt="sc">
+                    </a>
+                <span class="label label-primary">XRP</span>
+                <span class="label label-warning">Top</span>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                    <img class="w-80" src="images/logos/trx.png" alt="trx">
+                </a>
+                <span class="label label-primary">Tron</span>
+                <span class="label label-warning">New</span>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                    <img class="w-80" src="images/logos/btc.png" alt="btc">
+                </a>
+                <span class="label label-primary">Bitcoin</span>
+                <span class="label label-warning">Top</span>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                    <img class="w-80" src="images/logos/eth.png" alt="eth">
+                </a>
+                <span class="label label-primary">Ethereum</span>
+                <span class="label label-warning">Old</span>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                    <img class="w-80" src="images/logos/ltc.png" alt="ltc">
+                </a>
+                <span class="label label-primary">Litecoin</span>
+                <span class="label label-warning">Old</span>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                    <img class="w-80" src="images/logos/dash.png" alt="dash">
+                </a>
+                <span class="label label-primary">Dash</span>
+                <span class="label label-warning">Old</span>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                    <img class="w-80" src="images/logos/doge.jpeg" alt="sc">
+                </a>
+                <span class="label label-primary">Doge</span>
+                <span class="label label-warning">Old</span>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                    <img class="w-80" src="images/logos/xem.png" alt="xem">
+                </a>
+                <span class="label label-primary">Nem</span>
+                <span class="label label-warning">Old</span>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4 m-t-9 text-center">
+                <a href="index-2.html">
+                    <img class="w-80" src="images/logos/rep.png" alt="rep">
+                </a>
+                <span class="label label-primary">Augur</span>
+                <span class="label label-warning">Old</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end container -->
+</section>
+<!-- end Currencies -->
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="title-box text-center">
+
+                    <p>
+                        <span class="fa fa-bar-chart color-blue"></span> want to list your token!</p>
+                    <h2 class="text-uppercase text-blue text-blue">Token Listing Inquiry</h2>
+                </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <hr class="light">
+                <p class="text-faded">
+                    Want to list your token on our exchange? & have it traded against industry leading crypto or other tokens? You have come
+                    to the right place. Fill out request form & a representative will be in touch.
+                </p>
+                <div class="row">
+                    <a href="/submittoken" class="btn btn-primary">Submit Your Token
+                                <i class="fa fa-sign-in"></i>
+                            </a>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+    </div>
+    <!-- end container -->
+</section>
+@endsection

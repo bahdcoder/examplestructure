@@ -1,0 +1,62 @@
+{
+  "name": "adongular-cryptoexchange",
+  "version": "4.1.0",
+  "adonis-version": "4.1.0",
+  "description": "Crypto Currency Exchange by Team Adongular",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node ace test"
+  },
+  "keywords": [
+    "adongular",
+    "adongular-cryptoexchange"
+  ],
+  "author": "Team Adongular",
+  "license": "GNU",
+  "private": true,
+  "dependencies": {
+    "@adonisjs/ace": "^5.0.3",
+    "@adonisjs/auth": "^3.0.6",
+    "@adonisjs/bodyparser": "^2.0.4",
+    "@adonisjs/cors": "^1.0.6",
+    "@adonisjs/fold": "^4.0.9",
+    "@adonisjs/framework": "^5.0.8",
+    "@adonisjs/ignitor": "^2.0.7",
+    "@adonisjs/lucid": "^5.0.4",
+    "@adonisjs/mail": "^3.0.8",
+    "@adonisjs/session": "^1.0.26",
+    "@adonisjs/shield": "^1.0.7",
+    "@adonisjs/validator": "^5.0.3",
+    "@adonisjs/websocket": "^1.0.11",
+    "@adonisjs/websocket-client": "^1.0.9",
+    "adonis-scheduler": "^3.0.2",
+    "adonis-websocket-client": "^1.0.2",
+    "axios": "^0.18.0",
+    "block_io": "^1.0.9",
+    "bluebird": "^3.5.1",
+    "cryptocompare": "^0.5.0",
+    "eth-crypto": "^1.2.3",
+    "ethers": "^3.0.26",
+    "md5": "^2.2.1",
+    "moment": "^2.22.2",
+    "mysql2": "^1.5.3",
+    "nano-time": "^1.0.0",
+    "node-fetch": "^2.2.0",
+    "qrcode": "^1.2.2",
+    "randomstring": "^1.1.5",
+    "ripple-lib": "^1.0.0-beta.3",
+    "ripple-wallet": "^2.0.0",
+    "sanitize-html": "^1.18.2",
+    "socket.io": "^2.1.1",
+    "speakeasy": "^2.0.0",
+    "web3": "^1.0.0-beta.35"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.5",
+    "webpack": "^3.12.0"
+  },
+  "autoload": {
+    "App": "./app"
+  }
+}

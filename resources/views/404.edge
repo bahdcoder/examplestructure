@@ -1,0 +1,40 @@
+@layout('site_template/template') 
+@section('content')
+<!--Error page starts-->
+<section id="error">
+    <div class="container-fluid bg-grey bg-lighten-3">
+        <div class="container">
+            <div class="row full-height-vh">
+                <div class="col-md-12 col-lg-3 ml-auto d-flex align-items-center">
+                    <div class="row text-center mb-3">
+                        <div class="col-12">
+                            <img src="../app-assets/img/portrait/avatars/avatar-10.png" alt="User" width="300">
+                        </div>
+                        <div class="col-12">
+                            <h4 class="grey darken-2 font-large-5">Opps...</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-8 d-flex align-items-center justify-content-center">
+                    <div class="error-container">
+                        <div class="no-border">
+                            <div class="text-center text-bold-700 grey darken-2 mt-5" style="font-size: 11rem; margin-bottom: 4rem;">404</div>
+                        </div>
+                        <div class="error-body">                            
+                            <div class="row py-2 justify-content-center">
+                                <div class="col-8">
+                                    <div class="text-center text-bold-700 grey darken-2 mt-5" style="font-size: 5rem; margin-bottom: 4rem;">
+                                        Page Not Found
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Error page ends-->
+@endsection

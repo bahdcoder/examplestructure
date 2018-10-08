@@ -1,0 +1,41 @@
+@layout('site_template/template') 
+@section('content')
+
+<div class="home-wrapper home-intro row vertical-content">
+
+    <div class="col-md-6 col-sm-8">
+        <div class="tabbable-panel">
+            <div class="tabbable-line">
+                <div class="tab-content tab-content-BuySell m-t-9">
+
+                    <div class="tab-pane active" id="tab_default_2">
+                        <div class="panel panel-body">
+                            <form class="intro-form" @submit.prevent="login()" id="invite-2">
+                                <h5>
+                                    <i class="fa fa-key"></i> Sign in
+                                    <span>Have an account? Sign in & start trading</span>
+                                </h5>
+                                <div class="alert" :class="[login_alert_class]" v-if="login_show_alert">
+                                    @{{ login_alert_msg }}
+                                </div>
+
+                                <input type="email" :disabled="login_is_submitting" v-model="user_login.username" placeholder="Email Address" required="required">
+                                <input type="password" :disabled="login_is_submitting" v-model="user_login.password" placeholder="Password" required="required">
+                                <button type="submit" class="btn btn-secondary btn-block">Sign In</button>
+
+                                <p>By Signing in you agree to our
+                                    <a href="/terms">terms of conditions</a>
+                                </p>
+                                <p>
+                                    <a href="/forgotpassword">Forgot Password ?</a>
+                                </p>
+                            </form>
+                            <span id="result"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

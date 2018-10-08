@@ -1,0 +1,49 @@
+@layout('site_template/template') 
+@section('content')
+
+<div class="home-wrapper home-intro row vertical-content">
+
+    <div class="col-md-6 col-sm-8">
+        <div class="tabbable-panel">
+            <div class="tabbable-line">
+                <div class="tab-content tab-content-BuySell m-t-9">
+
+                    <div class="tab-pane active" id="tab_default_2">
+                        <div class="panel panel-body">
+                            <form class="intro-form" @submit.prevent="submitToken()" id="invite">
+                                <h5>
+                                    <i class="fa fa-user"></i> Submit Token
+                                    <span>
+                                        Want to list your token on our exchange? Fill out this form our representative will be in touch.
+                                    </span>
+                                </h5>
+                                <div class="alert" :class="[tok_alert_class]" v-if="tok_show_alert">
+                                    @{{ tok_alert_msg }}
+                                </div>
+                                <input :disabled="tok_is_submitting" v-model="user_tok.fullname" class="fname" placeholder="Full Name" type="text" required="required">
+                                <input :disabled="tok_is_submitting" v-model="user_tok.companyname" class="fname" placeholder="Company Name" type="text"
+                                    required="required">
+                                <input :disabled="tok_is_submitting" v-model="user_tok.email" type="email" placeholder="Email Address" required="required">
+                                <input :disabled="tok_is_submitting" v-model="user_tok.contactnumber" class="fname" placeholder="Contact Number" type="text"
+                                    required="required">
+                                <input :disabled="tok_is_submitting" v-model="user_tok.tokenname" class="fname" placeholder="Token Name" type="text" required="required">
+                                <input :disabled="tok_is_submitting" v-model="user_tok.tokenwebsite" class="fname" placeholder="Token Website" type="text"
+                                    required="required">
+                                <input :disabled="tok_is_submitting" v-model="user_tok.contractaddress" class="fname" placeholder="Token Contract Address"
+                                    type="text" required="required">
+
+                                <button type="submit" class="btn btn-secondary btn-block">Submit Request</button>
+
+                                <p>By Submitting up you agree to our
+                                    <a href="/terms">terms of conditions</a>
+                                </p>
+                            </form>
+                            <span id="result"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

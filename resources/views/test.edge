@@ -1,0 +1,37 @@
+@layout('clients/template/template') 
+
+@section('scripts')
+
+<script>
+    $(function () {
+        const ws = adonis.Ws('ws://127.0.0.1:3333',{'path':'adonis-ws'}).connect()
+        ws.on('open', () => {
+            console.log('Open')
+            isConnected = true
+
+            const wsclient = ws.subscribe('trade:{{ BaseWallet.wallet_symbol }}-{{ TradeWallet.wallet_symbol }}')
+            wsclient.on('ready', () => {
+                console.log('Connected');
+                wsclient.emit('message', 'hello')
+            })
+
+            wsclient.on('error', (error) => {
+                console.log(error)
+            })
+
+            wsclient.on('close', () => {
+            })
+            
+        })
+
+        ws.on('close', () => {
+            console.log('Close')
+            isConnected = false
+        })
+    });
+    
+    
+
+</script>
+
+@endsection

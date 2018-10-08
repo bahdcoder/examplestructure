@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--SEO Meta Tags-->
+    <meta charset="utf-8" />
+    <!-- SITE TITLE -->
+    <title>{{{ Title }}}</title>
+    <meta content="{{{ MetaDescription }}}" name="description" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+
+    <!-- Bootstrap CSS -->
+    {{ style('app/css/bootstrap.css') }}
+
+    <!-- Icon CSS -->
+    {{ style('css/themify-icons.css') }}
+
+    <!-- FontAwesome -->
+    {{ style('plugins/fontawesome/css/font-awesome.css') }}
+
+    <!-- Owl Carousel CSS -->
+    {{ style('css/owl.carousel.css') }} 
+    {{ style('css/owl.theme.default.min.css') }}
+
+    <!-- Magnific-popup -->
+    {{ style('css/magnific-popup.css') }}
+
+    <!-- Custom styles for this template -->
+    {{ style('app/css/app.css') }} 
+    @!section('styles')
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+
+<body data-spy="scroll" data-target="#data-scroll">
+
+    @include('site_template/content_navbar')
+
+    <!-- Content -->
+    @!section('homecontent')
+    <section class="home home-small" id="home">
+        <div class="container" id="adongular-app">
+            <div class="row">
+                <div class="col-md-12">
+                    @!section('content')
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+            {{ csrfField() }}
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- END Content -->
+
+    @include('site_template/footer') 
+    {{ script('plugins/jquery/jquery.js') }} 
+    {{ script('plugins/bootstrap/js/bootstrap.js') }} 
+    {{ script('https://cdn.jsdelivr.net/npm/vue/dist/vue.js') }} 
+    {{ script('app/js/app.js') }} 
+    @!section('scripts')
+
+    <!-- Sticky Header -->
+    {{ script('js/jquery.sticky.js') }}
+
+    <!-- Jquery easing -->
+    {{ script('js/jquery.easing.1.4.1.js') }}
+
+    <!-- Owl Carousel -->
+    {{ script('js/owl.carousel.min.js') }}
+
+    <!-- Magnific Popup -->
+    {{ script('js/jquery.magnific-popup.js') }}
+
+    <!-- Custom js -->
+    {{ script('js/landing.js') }}
+
+</body>
+
+</html>
