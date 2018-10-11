@@ -29,6 +29,7 @@ Route.group(() => {
     Route.get('/submittoken', 'WebSiteController.submittoken');
     Route.post('/submittoken', 'WebSiteController.processsubmittoken');
     Route.get('/terms', 'WebSiteController.terms');
+    Route.get('/privacy', 'WebSiteController.privacy');
     Route.get('/404', 'WebSiteController.404');    
 
 })

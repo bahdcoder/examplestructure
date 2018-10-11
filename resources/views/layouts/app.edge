@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Softnio">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Yoshiee Exchange World's First Digital Notes Exchange">
+	<!-- Fav Icon  -->
+	<link rel="favicon" href="images/favicon.png">
+	<!-- Site Title  -->
+  <title>{{{ Title }}}</title>
+  <meta content="{{{ MetaDescription }}}" name="description" />
+  {{ style('assets/css/vendor.bundle.css?ver=142') }}
+  {{ style('assets/css/style.css?ver=142') }}
+  {{ style('assets/css/style.css?ver=142') }}
+	{{ style('assets/css/theme-orange.css?ver=142') }}
+	
+</head>
+
+<body class="theme-dark io-zinnia" data-spy="scroll" data-target="#mainnav" data-offset="80">
+
+	<!-- Header --> 
+	<header class="site-header shadow-sm">
+	    
+	    <!-- Place Particle Js -->
+		<div id="particles-js" class="particles-container particles-js"></div>
+		
+		<!-- Navbar  navbar navbar-full navbar-expand-lg -->
+      <div class="navbar navbar-full navbar-expand-lg {{ url === '/terms' || url === '/privacy' ? '' : 'is-transparent' }}" id="mainnav">
+        <a class="navbar-brand animated" data-animate="fadeInDown" data-delay=".65" href="/">
+            <img class="logo logo-dark" alt="logo" src="{{ assetsUrl('images/yoshiee.png') }}">
+            <img class="logo logo-light" alt="logo" src="{{ assetsUrl('images/yoshiee.png') }}">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
+            <span class="navbar-toggler-icon">
+                <span class="ti ti-align-justify"></span>
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
+            <ul class="navbar-nav animated remove-animation  justify-content-end" data-animate="fadeInDown" data-delay=".75">
+                <li class="nav-item"><a class="nav-link menu-link {{ url === '/' ? 'active' : '' }}" href="/">Home</a></li>				
+                <li class="nav-item"><a class="nav-link menu-link {{ url === '/login' ? 'active' : '' }}" href="/login">login</a></li>
+                <li class="nav-item"><a class="nav-link menu-link {{ url === '/register' ? 'active' : '' }}" href="/register">register</a></li>
+            </ul>
+        
+        </div>
+		</div>
+    <!-- End Navbar -->
+    
+    @!section('content')
+
+	</header>
+  <!-- End Header -->
+  
+  @!section('terms')
+
+  @!section('home')
+	
+
+  	<!-- Start Footer Section -->
+    <div class="section footer-section section-pad-md no-pb">
+        <div class="ui-shape ui-shape-light ui-shape-footer"></div>
+        <div class="container">
+            <div class="row">
+              
+                <div class="col-lg-4 col-sm">
+                    <div class="widget-item">
+                        <a class="footer-brand" href="./">
+                        <img class="logo logo-light" alt="logo" src="{{ assetsUrl('assets/images/yoshiee-white.png') }}">
+                          </a>
+                    </div>
+                </div><!-- .col -->
+            <div class="col-lg-4">
+                  
+                </div><!-- .col -->
+                <div class="col-lg-4 col-sm">
+                    <div class="widget-item">
+                <h5 class="widget-title">RESOURCES</h5>
+                        <ul class="widget-links">
+                <li><a href="#">Start Trading</a></li>
+                            <li><a href="#">We are Hiring</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">API Docs</a></li>
+                <li><a href="/privacy" target="_blank">	Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div><!-- .col -->
+            
+            </div><!-- .row -->
+            <div class="footer-bottom">
+                  <div class="row align-items-center">
+                  
+                      <div class="col-sm-12 text-sm-center">
+                          <span class="copyright-text"> Platform Powered By <a href="http://www.tokiee.tech" target="_blank">Tokiee Technologies</a></span>
+                      </div>
+                  </div>
+            </div>
+        </div><!-- .container -->
+    </div>
+  <!-- End Footer Section -->
+
+
+
+	<!-- Preloader !remove please if you do not want -->
+	<div id="preloader">
+		<div id="loader"></div>
+		<div class="loader-section loader-top"></div>
+   		<div class="loader-section loader-bottom"></div>
+	</div>
+	<!-- Preloader End -->
+	
+		<!-- ScrollToTop !remove please if you do not want -->
+			<div id="back-top" class="materialScrollTop" style="display: block;"><a href="#" class="fa fa-angle-double-up"></a></div>
+		<!-- ScrollToTop End -->
+
+	<!-- JavaScript (include all script here) -->
+  {{ script('assets/js/jquery.bundle.js?ver=142') }}
+  {{ script('assets/js/script.js?ver=142') }}
+</body>
+</html>

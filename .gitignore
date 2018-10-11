@@ -12,3 +12,6 @@ database/development.sqlite
 
 # All Uploads 
 public/uploads/
+
+# Others
+template

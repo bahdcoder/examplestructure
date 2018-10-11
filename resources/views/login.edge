@@ -1,41 +1,52 @@
-@layout('site_template/template') 
+@layout('layouts.app')
+
 @section('content')
-
-<div class="home-wrapper home-intro row vertical-content">
-
-    <div class="col-md-6 col-sm-8">
-        <div class="tabbable-panel">
-            <div class="tabbable-line">
-                <div class="tab-content tab-content-BuySell m-t-9">
-
-                    <div class="tab-pane active" id="tab_default_2">
-                        <div class="panel panel-body">
-                            <form class="intro-form" @submit.prevent="login()" id="invite-2">
-                                <h5>
-                                    <i class="fa fa-key"></i> Sign in
-                                    <span>Have an account? Sign in & start trading</span>
-                                </h5>
-                                <div class="alert" :class="[login_alert_class]" v-if="login_show_alert">
-                                    @{{ login_alert_msg }}
-                                </div>
-
-                                <input type="email" :disabled="login_is_submitting" v-model="user_login.username" placeholder="Email Address" required="required">
-                                <input type="password" :disabled="login_is_submitting" v-model="user_login.password" placeholder="Password" required="required">
-                                <button type="submit" class="btn btn-secondary btn-block">Sign In</button>
-
-                                <p>By Signing in you agree to our
-                                    <a href="/terms">terms of conditions</a>
-                                </p>
-                                <p>
-                                    <a href="/forgotpassword">Forgot Password ?</a>
-                                </p>
+<!-- Banner/Slider -->
+<div id="header" class="banner banner-zinnia register-login">
+    <div class="ui-shape ui-shape-light ui-shape-header"></div>
+    <div class="container-fluid">
+       <div class="banner-content">
+          <div class="row align-items-center text-left justify-content-center">
+             <div class="col-sm-10 col-md-12 col-lg-5 z-index">
+                <div class="tab-custom-s3 ">
+                   <!-- Nav tabs -->
+                   <div class="gaps size-1x"></div>
+                   <!-- Tab panes -->
+                   <div class="animated fadeInUp mt-5" data-animate="fadeInUp" data-delay=".8" style="visibility: visible; animation-delay: 0.2s;">
+                      <div class="signup-form fade active show">
+                         <div>
+                            <form id="invite-2" class="intro-form">
+                               <h5><i class="fa fa-key"></i> Sign in
+                                  <span>Have an account? Sign in &amp; start trading</span>
+                               </h5>
+                               <div class="form-inner-block">
+                                  <!----> 
+                                  <div class="form-group">
+                                     <input placeholder="Email Address" required="required" type="email" class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                     <input placeholder="Password" required="required" type="password" class="form-control">
+                                  </div>
+                                  <button type="submit" class="btn btn-secondary btn-block">Sign In</button> 
+                                  <p class="text-center mb-0">By Signing in you agree to our
+                                     <a href="/terms" >terms of conditions</a>
+                                  </p>
+                                  <p class="text-center"> <a href="/forgotpassword">Forgot Password ?</a></p>
                             </form>
-                            <span id="result"></span>
-                        </div>
-                    </div>
+                            </div>
+                         </div>
+                         <!-- End tab-pane -->
+                      </div>
+                      <!-- .tab-content -->
+                   </div>
                 </div>
-            </div>
-        </div>
+                <!-- .col  -->
+             </div>
+             <!-- .row  -->
+          </div>
+          <!-- .banner-content  -->
+       </div>
+       <!-- .container  -->
     </div>
-</div>
+    <!-- End Banner/Slider -->
 @endsection

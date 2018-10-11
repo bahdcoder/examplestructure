@@ -40,6 +40,11 @@ class WebSiteController {
         return view.render('login', TemplateVariables)
     }
 
+    async privacy({ request, response, view }) {
+      let TemplateVariables = await this.__getTemplateVariables();
+      return view.render('privacy', TemplateVariables)
+    }
+
 }
 
 module.exports = WebSiteController
