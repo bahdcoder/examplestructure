@@ -20,33 +20,17 @@
 <body class="theme-dark io-zinnia" data-spy="scroll" data-target="#mainnav" data-offset="80">
 
 	<!-- Header --> 
-	<header class="site-header shadow-sm">
+	<header class="site-header is-sticky has-fixed shadow-sm">
 	    
 	    <!-- Place Particle Js -->
 		<div id="particles-js" class="particles-container particles-js"></div>
 		
 		<!-- Navbar  navbar navbar-full navbar-expand-lg -->
-      <div class="navbar navbar-full navbar-expand-lg {{ url === '/terms' || url === '/privacy' ? '' : 'is-transparent' }}" id="mainnav">
-        <a class="navbar-brand animated" data-animate="fadeInDown" data-delay=".65" href="/">
-            <img class="logo logo-dark" alt="logo" src="{{ assetsUrl('images/yoshiee.png') }}">
-            <img class="logo logo-light" alt="logo" src="{{ assetsUrl('images/yoshiee.png') }}">
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
-            <span class="navbar-toggler-icon">
-                <span class="ti ti-align-justify"></span>
-            </span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
-            <ul class="navbar-nav animated remove-animation  justify-content-end" data-animate="fadeInDown" data-delay=".75">
-                <li class="nav-item"><a class="nav-link menu-link {{ url === '/' ? 'active' : '' }}" href="/">Home</a></li>				
-                <li class="nav-item"><a class="nav-link menu-link {{ url === '/login' ? 'active' : '' }}" href="/login">login</a></li>
-                <li class="nav-item"><a class="nav-link menu-link {{ url === '/register' ? 'active' : '' }}" href="/register">register</a></li>
-            </ul>
-        
-        </div>
-		</div>
+      @if(url === '/')
+        @include('partials/home-navbar')
+      @else
+        @include('partials/navbar')
+      @endif
     <!-- End Navbar -->
     
     @!section('content')
